@@ -188,7 +188,7 @@ require(
             history: true,
             theme: 'simple',
             transition: 'none',
-            center: true,
+            center: false,
 
             // Optional libraries used to extend on reveal.js
             dependencies: [

@@ -48,12 +48,12 @@ env.Command(
 ## Specify nbconvert target, to generate the slides
 env.Command(
     "codeneuro-sf-2015.slides.html",
-    ["codeneuro-sf-2015.ipynb", "reveal.tpl", "hide_input.tpl", "reveal.js", "example/Assignment.html"],
+    ["codeneuro-sf-2015.ipynb", "reveal.tpl", "reveal.js", "example/Assignment.html"],
     " ".join([
         "ipython nbconvert",
         "--RevealHelpTransformer.url_prefix=reveal.js",
         "--to slides",
-        "--template hide_input.tpl",
+        "--template reveal.tpl",
         "$SOURCE"]))
 
 env.Alias("slides", "codeneuro-sf-2015.slides.html")
