@@ -45,10 +45,19 @@ env.Command(
         "--FilesWriter.build_directory=example",
         "$SOURCE"]))
 
+env.Command(
+    "perceptron/Perceptron Demo.html",
+    ["perceptron/Perceptron Demo.ipynb"],
+    " ".join([
+        "ipython nbconvert",
+        "--to html",
+        "--FilesWriter.build_directory=perceptron",
+        "$SOURCE"]))
+
 ## Specify nbconvert target, to generate the slides
 env.Command(
     "codeneuro-sf-2015.slides.html",
-    ["codeneuro-sf-2015.ipynb", "reveal.tpl", "reveal.js", "example/Assignment.html"],
+    ["codeneuro-sf-2015.ipynb", "reveal.tpl", "reveal.js", "example/Assignment.html", "perceptron/Perceptron Demo.html"],
     " ".join([
         "ipython nbconvert",
         "--RevealHelpTransformer.url_prefix=reveal.js",
